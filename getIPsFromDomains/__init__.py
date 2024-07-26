@@ -9,7 +9,6 @@ from tabulate import tabulate
 def get_ip_addresses(domain):
     try:
         info = socket.getaddrinfo(domain, None, family=socket.AF_UNSPEC, proto=socket.IPPROTO_TCP)
-        print(info)
         ip_addresses = list(set(addr[-1][0] for addr in info))
         return domain, ip_addresses
     except socket.gaierror:
