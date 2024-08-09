@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='getIPsFromDomains',
-    version='0.0.1',
+    version='1.0.0',
     description='Private package to getIPsFromDomains, a tool to get IPs from a list of domains...',
     url='git@github.com:JavaliMZ/getIPsFromDomains.git',
     author='Sylvain Júlio',
