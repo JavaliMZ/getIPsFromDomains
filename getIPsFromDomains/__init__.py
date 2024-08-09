@@ -40,7 +40,7 @@ def pretty_print(results):
     for domain, ips in results.items():
         ip_list = ', '.join(ips) if ips else 'No IP found'
         table_data.append([domain, ip_list])
-    print(tabulate(table_data, tablefmt='plain'))
+    print(tabulate(table_data, tablefmt='presto'))
 
 def get_domains_from_file():
     with open(sys.argv[1], "r") as f:
