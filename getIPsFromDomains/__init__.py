@@ -5,6 +5,7 @@ import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import tqdm
 from tabulate import tabulate
+from termcolor import colored  # type: ignore
 
 def get_ip_addresses(domain):
     try:
@@ -38,9 +39,9 @@ def resolve_domains(domains, max_workers=5):
 def pretty_print(results):
     table_data = []
     for domain, ips in results.items():
-        ip_list = ', '.join(ips) if ips else 'No IP found'
-        table_data.append([domain, ip_list])
-    print(tabulate(table_data, tablefmt='presto'))
+        ip_list = colored(", ".join(ips), "magenta") if ips else colored("No IP found", "blue")
+        table_data.append([colored(domain, "green"), ip_list])
+    print(tabulate(table_data, tablefmt="presto"))
 
 def get_domains_from_file():
     with open(sys.argv[1], "r") as f:

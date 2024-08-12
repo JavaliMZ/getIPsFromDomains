@@ -12,7 +12,8 @@ setup(
     zip_safe=False,
     install_requires=[
         'tqdm',
-        'tabulate'
+        'tabulate',
+        'termcolor'
     ],
     entry_points={
         'console_scripts': [
